@@ -3,7 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { getProducts, getCategories } from '../services/api';
 import ProductCard from '../components/ProductCard';
 import SearchBar from '../components/SearchBar';
-import Loader from '../components/Loader';
+import EmptyState from '../components/EmptyState';
+import { ProductGridSkeleton } from '../components/Skeletons';
 import { categoryMeta } from '../data/products';
 import './Products.css';
 
@@ -44,6 +45,14 @@ const Products = () => {
     setSearchParams(searchParams);
   };
 
+  const clearAllFilters = () => {
+    setSearch('');
+    setCategory('all');
+    setSort('default');
+    const params = new URLSearchParams();
+    setSearchParams(params);
+  };
+
   const filteredProducts = useMemo(() => {
     let result = [...products];
 
@@ -80,7 +89,17 @@ const Products = () => {
     return result;
   }, [products, search, category, sort]);
 
-  if (loading) return <Loader message="Loading products..." />;
+  if (loading) {
+    return (
+      <div className="products-page">
+        <div className="products-header">
+          <h1 className="page-title">All Products</h1>
+          <p className="page-subtitle">Loading products...</p>
+        </div>
+        <ProductGridSkeleton count={12} />
+      </div>
+    );
+  }
   if (error) return <div className="error-state"><h2>Failed to load products</h2><p>{error}</p></div>;
 
   return (
@@ -122,14 +141,17 @@ const Products = () => {
       </div>
 
       {filteredProducts.length === 0 ? (
-        <div className="no-results">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            <line x1="8" y1="11" x2="14" y2="11"/>
-          </svg>
-          <h3>No products found</h3>
-          <p>Try adjusting your search or filters.</p>
-        </div>
+        <EmptyState
+          icon={search ? '🔍' : '🏷️'}
+          title="No products found"
+          description={
+            search
+              ? `Nothing matches "${search}" right now. Try a different keyword or clear your filters.`
+              : 'No products match your current filters. Try adjusting them to see more.'
+          }
+          actionText="Clear filters"
+          onAction={clearAllFilters}
+        />
       ) : (
         <div className="products-grid">
           {filteredProducts.map((product) => (
