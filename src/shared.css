@@ -1,0 +1,58 @@
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-cart {
+  background: var(--accent-cart);
+}
+
+.btn-cart:hover {
+  background: var(--accent-cart-hover);
+}
+
+.btn-lg {
+  padding: 14px 28px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+.error-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text);
+}
+
+.error-state h2 {
+  color: var(--text-heading);
+  margin-bottom: 8px;
+}
+
+.error-state p {
+  margin-bottom: 16px;
+}
