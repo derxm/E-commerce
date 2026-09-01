@@ -9,7 +9,7 @@ const Footer = () => {
           <p className="footer-tagline">Your one-stop shop for everything.</p>
         </div>
         <div className="footer-links">
-          <a href="https://fakestoreapi.com" target="_blank" rel="noopener noreferrer">API Source</a>
+          <a href="https://dummyjson.com" target="_blank" rel="noopener noreferrer">API Source</a>
           <a href="https://react.dev" target="_blank" rel="noopener noreferrer">React</a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>

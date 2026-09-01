@@ -1,6 +1,6 @@
-# E-Commerce Store
+# DexHub
 
-A modern, fully responsive e-commerce web application built with **React** and **Vite**. It features a complete storefront experience — browsing, search, filtering, sorting, product details, a cart, and a wishlist — styled with a distinctive **black, cream, and gold** theme with light/dark mode.
+DexHub is a modern, fully responsive e-commerce web application built with **React** and **Vite**. It features a complete storefront experience — browsing, search, filtering, sorting, product details, a cart, and a wishlist — styled with a distinctive **black, cream, and gold** theme with light/dark mode.
 
 ## Features
 
