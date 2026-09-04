@@ -12,7 +12,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">DexHub</Link>
+        <Link to="/" className="navbar-logo">
+          <img src="/logo.svg" alt="" className="navbar-logo-icon" width="28" height="28" />
+          DexHub
+        </Link>
         <div className="navbar-links">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/products" className="nav-link">Products</Link>

@@ -5,7 +5,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <span className="footer-logo">DexHub</span>
+          <span className="footer-logo">
+            <img src="/logo.svg" alt="" width="22" height="22" style={{ verticalAlign: 'middle', marginRight: 6 }} />
+            DexHub
+          </span>
           <p className="footer-tagline">Your one-stop shop for everything.</p>
         </div>
         <div className="footer-links">
